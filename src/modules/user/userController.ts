@@ -1,26 +1,28 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response } from 'express';
 
-const get = (_req: Request, res: Response, _next: NextFunction) => {
+const get = (_req: Request, res: Response) => {
   res.status(200).send('get :: Success request');
-}
+};
 
-const getById = (req: Request, res: Response, _next: NextFunction) => {
+const getById = (req: Request, res: Response) => {
   const { id } = req.params;
   res.status(200).send(`${id} :: getById :: Success request`);
-}
+};
 
-const post = (_req: Request, res: Response, _next: NextFunction) => {
+const post = (_req: Request, res: Response) => {
   res.status(201).send('post :: Success request');
-}
+};
 
-const put = (req: Request, res: Response, _next: NextFunction) => {
+const put = (req: Request, res: Response) => {
   const { id } = req.params;
   res.status(201).send(`${id} :: put :: Success request`);
-}
+};
 
-const remove = (req: Request, res: Response, _next: NextFunction) => {
+const remove = (req: Request, res: Response) => {
   const { id } = req.params;
   res.status(201).send(`${id} :: remove :: Success request`);
-}
+};
 
-export default { get, getById, post, put, remove };
+export default {
+  get, getById, post, put, remove,
+};
