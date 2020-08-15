@@ -30,3 +30,19 @@
 `"prod": "npm run build && node dist/entry.js"`
 
 ## Convert all files to typeScript
+
+## Install Babel to compile
+
+`npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver`
+
+### Babel config file babel.config.js
+### Add build commands on package.json
+`"prod": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",`
+`"run-prod": "npm run lint && npm run test && npm run prod && node dist/server.js",`
+
+## Add Mongo DB - TODO
+
+## Add Unit Test All functions - TODO
+
+## Add Integration Test to All Routes - TODO
+
