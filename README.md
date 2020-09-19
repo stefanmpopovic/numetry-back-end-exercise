@@ -40,6 +40,11 @@
 `"prod": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",`
 `"run-prod": "npm run lint && npm run test && npm run prod && node dist/server.js",`
 
+## DEGUB
+`DEBUG=* node server.js`
+`PINO js`
+`WINSTON js`
+
 ## Add Mongo DB - TODO
 
 ## Add Unit Test All functions - TODO
