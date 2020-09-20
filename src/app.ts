@@ -10,9 +10,7 @@ app.use(cors());
 app.use('/user', userRouter.router);
 
 const dataBaseInitialize = async () => {
-  await createConnection().then((_result) => {
-    console.log('database::conected!');
-  })
+  await createConnection()
   .catch((error) => {
     console.log('database::conection:: error to connect', error);
   });

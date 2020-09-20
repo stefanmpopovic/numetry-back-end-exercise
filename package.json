@@ -11,7 +11,7 @@
       "dev": "nodemon --watch \"src/\" --exec \"ts-node ./src/server.ts\" -e ts",
       "start": "npm run ts-run-dist",
       "test:coverage": "jest --coverage",
-      "test": "jest --no-cache",
+      "test": "jest --no-cache --detectOpenHandles",
       "lint": "npx eslint . --ext .js,.ts"
    },
    "keywords": [],

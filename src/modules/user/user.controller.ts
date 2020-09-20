@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { User } from '../../entity/user';
 import { getConnection } from 'typeorm';
+import { User } from '../../entity/User';
 
 const get = (_req: Request, res: Response) => {
   res.status(200).send('get :: Success request');
@@ -8,26 +8,21 @@ const get = (_req: Request, res: Response) => {
 
 const getById = (req: Request, res: Response) => {
   const { id } = req.params;
+  // console.log("Loading users from the database...");
+  // const users = await connection.getRepository(User).find(user);
   res.status(200).send(`${id} :: getById :: Success request`);
 };
 
 const post = async (_req: Request, res: Response) => {
-
-  console.log("Inserting a new user into the database...");
   const user = new User();
   user.firstName = "Carlos";
   user.lastName = "Rodrigues";
   user.age = 33;
 
   const connection = getConnection();
-  await connection.getRepository(User).save(user);
-  console.log("Saved a new user with id: " + user.id);
+  const userSaved = await connection.getRepository(User).save(user);
 
-  console.log("Loading users from the database...");
-  const users = await connection.getRepository(User).find(user);
-  console.log("Loaded users: ", users);
-
-  res.status(201).send('post :: Success request');
+  res.status(201).send({data: userSaved});
 };
 
 const put = (req: Request, res: Response) => {
