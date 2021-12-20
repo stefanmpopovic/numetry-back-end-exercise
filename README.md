@@ -1,58 +1,47 @@
-## Create package.json
-`npm init -y`
+# Numetry Back-end Developer Exercise
 
-## Installing express
-`npm i express`
+## The Exercise
 
-## Configure Server -> App -> Route -> Controller 
+Numetry is an EdTech company that is built to help Teachers keep kids having fun learning.
+Based on that we need to build an API for a Panel that Teachers can see and understand the student's progress and also create exercises based on the mini-games skills. To help us with this challenge we need to hire developers that must demonstrate an ability to read existing code and write new code using NodeJS, JS ES6+, Express, Typescript and SQL (PostGres) and NoSQL Db (MongoDB and Redis). For that reason, this exercise provides boilerplate code that you are expected to extend and utilize in your solution.
 
-## install nodemon
-`npm install --save-dev nodemon`
+This is a pair programming exercise and there is no time limit. If you get stuck, ask for help! Software development is a collaborative process! We are there to help guide you as we come to a solution together.
 
-### add on package.json
-`"start": "nodemon --watch app --watch src ./server.js"`
+## Set-up Instructions
 
-## Adding typescript
-`npm i typescript ts-node @types/express`
-`./node_modules/.bin/tsc --init`
+- Make sure you have `npm > 5` and `node > 14` installed before starting
+- Clone this project: `git clone `
+- Open the project in VS Code
+- Open the `project folder`.
+- run in the command line: npm install
+## The Goal
 
-`npm i @types/jest jest ts-jest`
+Having two different tables, games, and assignments table already created and with data populated.
+Is necessary to make the relationship between these two tables and return an object with all the assignment and games information.
+Consider that one Assignments can have many games related.
 
-`npm i @types/supertest supertest`
+## Acceptance Criteria
 
-## add on package.json -> scripts
-`"test": "jest --no-cache"`
+1. Create the relationship between the two tables using the migration or pure SQL with TypeORM.
+2. Insert, populate seed data to test the relationship.
+3. Create the SQL to return the relationship data.
+4. Create a TypeORM Entity to return the relationship data.
+5. Explain:
+5.1. Wow could we add authorization or route guards in some routes in the API?
+5.2. How would we store sensitive data in the database?
 
-## Implement at lest a test
+## Installation
 
-## add on package.json -> scripts -> prod build
-`"build": "tsc",`
-`"prod": "npm run build && node dist/entry.js"`
+```bash
+$ npm install
+```
 
-## Convert all files to typeScript
-
-## Install Babel to compile
-
-`npm install --save-dev @babel/cli @babel/core @babel/node @babel/preset-env @babel/preset-typescript babel-plugin-module-resolver`
-
-### Babel config file babel.config.js
-### Add build commands on package.json
-`"prod": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files --no-copy-ignored",`
-`"run-prod": "npm run lint && npm run test && npm run prod && node dist/server.js",`
-
-## DEGUB
-`DEBUG=* node server.js`
-`PINO js`
-`WINSTON js`
-
-## Add Mongo DB - TODO
-
-## Add Unit Test All functions - TODO
-
-## Add Integration Test to All Routes - TODO
+## Development 
+```bash
+$ npm run dev
+```
 
 ## Migration commands
-## run the migration
 `ts-node ./node_modules/typeorm/cli.js migration:run`
 
 ## Run typeorm commands
