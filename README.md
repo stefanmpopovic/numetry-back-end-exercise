@@ -51,3 +51,12 @@
 
 ## Add Integration Test to All Routes - TODO
 
+## Migration commands
+## run the migration
+`ts-node ./node_modules/typeorm/cli.js migration:run`
+
+## Run typeorm commands
+`ts-node ./node_modules/typeorm/cli.js migration:create -n [new-table]`
+
+## drop database
+`ts-node ./node_modules/typeorm/cli.js schema:drop`
