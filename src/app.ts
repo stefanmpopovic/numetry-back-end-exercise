@@ -3,7 +3,7 @@ import type { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import "reflect-metadata";
 import {createConnection} from "typeorm";
-import userRouter from './modules/user/userRoute';
+import userRouter from './modules/assignment/assignment.route';
 
 const app: Application = express();
 app.use(cors());
