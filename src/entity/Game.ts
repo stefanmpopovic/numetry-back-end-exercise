@@ -12,7 +12,7 @@ export class Game {
   numberOfModes!: number;
 
   @Column({ default: true })
-  isActive!: boolean;
+  active!: boolean;
 
   @Column({ name: 'created_at'})
   createdAt!: Date;

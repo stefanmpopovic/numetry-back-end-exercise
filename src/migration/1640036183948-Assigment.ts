@@ -3,17 +3,17 @@ import {MigrationInterface, QueryRunner} from "typeorm";
 export class Assigment1640036183948 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
-    `
-    CREATE TABLE assignment (
+    await queryRunner.query(`
+      CREATE TABLE assignment (
       id serial NOT NULL,
       name VARCHAR ( 150 ) NOT NULL,
       start_period DATE NOT NULL,
-      end_period DATE,
-      active BOOLEAN NOT NULL DEFAULT ( TRUE ),
-      created_at DATE NOT NULL DEFAULT ( CURRENT_TIMESTAMP ),
+      end_period DATETIME,
+      active BOOLEAN NOT NULL DEFAULT TRUE,
+      created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
       PRIMARY KEY ( id ) 
     )
-    `
+    `);
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {

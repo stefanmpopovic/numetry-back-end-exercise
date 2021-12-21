@@ -13,13 +13,13 @@ app.use('/user', userRouter.router);
 
 const databaseConfig: ConnectionOptions = {
   name: 'default',
-  type: 'postgres',
+  type: 'mysql',
   host: process.env.TYPEORM_HOST || '',
   port: Number(process.env.TYPEORM_PORT),
   username: process.env.TYPEORM_USERNAME || '',
   password: process.env.TYPEORM_PASSWORD || '',
   database: process.env.TYPEORM_DATABASE || '',
-  logging: false,
+  logging: true,
   synchronize: false,
   entities: [
     Assignment,

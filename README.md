@@ -40,6 +40,8 @@ $ npm install
 ```bash
 $ npm run dev
 ```
+## Create a local database
+`'docker-compose -f docker-compose.yml up'`
 
 ## Migration commands
 `ts-node ./node_modules/typeorm/cli.js migration:run`
@@ -49,3 +51,4 @@ $ npm run dev
 
 ## drop database
 `ts-node ./node_modules/typeorm/cli.js schema:drop`
+

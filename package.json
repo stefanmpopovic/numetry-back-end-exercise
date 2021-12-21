@@ -28,8 +28,7 @@
       "i": "^0.3.6",
       "jest": "^26.0.1",
       "mysql": "^2.18.1",
-      "pg": "^8.7.1",
-      "reflect-metadata": "^0.1.10",
+      "reflect-metadata": "^0.1.13",
       "supertest": "^4.0.2",
       "ts-jest": "^26.1.0",
       "typeorm": "0.2.26"
