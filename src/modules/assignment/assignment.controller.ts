@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Assignment } from 'src/entity/Assignment';
+import { Assignment } from '../../entity/Assignment';
 import { getConnection } from 'typeorm';
 
 const get = (_req: Request, res: Response) => {
@@ -8,7 +8,7 @@ const get = (_req: Request, res: Response) => {
 
 const getById = (req: Request, res: Response) => {
   const { id } = req.params;
-  // console.log("Loading users from the database...");
+  // console.log("Loading assignment from the database...");
   // const users = await connection.getRepository(Assignment).find(user);
   res.status(200).send(`${id} :: getById :: Success request`);
 };

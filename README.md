@@ -14,21 +14,32 @@ This is a pair programming exercise and there is no time limit. If you get stuck
 - Open the project in VS Code
 - Open the `project folder`.
 - run in the command line: npm install
+
 ## The Goal
 
-Having two different tables, games, and assignments table already created and with data populated.
+Having two different tables, assingment and game table already created and with data populated.
 Is necessary to make the relationship between these two tables and return an object with all the assignment and games information.
 Consider that one Assignments can have many games related.
 
 ## Acceptance Criteria
 
-1. Create the relationship between the two tables using the migration or pure SQL with TypeORM.
+1. Create the relationship between the two tables.
 2. Insert, populate seed data to test the relationship.
 3. Create the SQL to return the relationship data.
 4. Create a TypeORM Entity to return the relationship data.
+
 5. Explain:
 5.1. Wow could we add authorization or route guards in some routes in the API?
 5.2. How would we store sensitive data in the database?
+
+- Assingment ::
+    - Creat [BE-READY]
+    - Get [BE-READY]
+    
+    Game ::
+    - Add Game object in the request
+    - Return the Game object
+
 
 ## Installation
 
@@ -43,12 +54,17 @@ $ npm run dev
 ## Create a local database
 `'docker-compose -f docker-compose.yml up'`
 
-## Migration commands
-`ts-node ./node_modules/typeorm/cli.js migration:run`
+## Generate Migration commands
+`ts-node ./node_modules/typeorm/cli.js migration:generate -n [new-table] -d ./src/migration/`
 
-## Run typeorm commands
-`ts-node ./node_modules/typeorm/cli.js migration:create -n [new-table]`
+## Create Migration typeorm commands
+`ts-node ./node_modules/typeorm/cli.js migration:create -n [new-table] -d ./src/migration/`
+
+## Run Migrations typeorm commands
+`ts-node ./node_modules/typeorm/cli.js migration:run`
 
 ## drop database
 `ts-node ./node_modules/typeorm/cli.js schema:drop`
+
+backend_test
 
