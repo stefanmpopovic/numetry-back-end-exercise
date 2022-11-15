@@ -3,17 +3,16 @@
 ## The Exercise
 
 Numetry is an EdTech company that is built to help Teachers keep kids having fun learning.
-Based on that we need to build an API for a Panel that Teachers can see and understand the student's progress and also create exercises based on the mini-games skills. To help us with this challenge we need to hire developers that must demonstrate an ability to read existing code and write new code using NodeJS, JS ES6+, Express, Typescript and SQL (PostGres) and NoSQL Db (MongoDB and Redis). For that reason, this exercise provides boilerplate code that you are expected to extend and utilize in your solution.
+Based on that we need to build an API for a Panel that Teachers can see and understand the student's progress and also create exercises based on the games skills. To help us with this challenge we need to hire developers that must demonstrate an ability to read existing code and write new code using NodeJS, JS ES6+, Express, Typescript and SQL (PostGres) and NoSQL Db (MongoDB and Redis). For that reason, this exercise provides boilerplate code that you are expected to extend and utilize in your solution.
 
 This is a pair programming exercise and there is no time limit. If you get stuck, ask for help! Software development is a collaborative process! We are there to help guide you as we come to a solution together.
 
 ## Set-up Instructions
 
-- Make sure you have `npm > 5` and `node > 14` installed before starting
+- Make sure you have `node > 16` installed before starting
 - Clone this project: `git clone `
 - Open the project in VS Code
 - Open the `project folder`.
-- run in the command line: npm install
 
 ## The Goal
 
@@ -26,20 +25,11 @@ Consider that one Assignments can have many games related.
 1. Create the relationship between the two tables.
 2. Insert, populate seed data to test the relationship.
 3. Create the SQL to return the relationship data.
-4. Create a TypeORM Entity to return the relationship data.
+4. Create or change a find method to return the relationship data.
 
 5. Explain:
 5.1. Wow could we add authorization or route guards in some routes in the API?
 5.2. How would we store sensitive data in the database?
-
-- Assingment ::
-    - Creat [BE-READY]
-    - Get [BE-READY]
-    
-    Game ::
-    - Add Game object in the request
-    - Return the Game object
-
 
 ## Installation
 
@@ -51,8 +41,9 @@ $ npm install
 ```bash
 $ npm run dev
 ```
-## Create a local database
-`'docker-compose -f docker-compose.yml up'`
+
+## Run Migrations typeorm commands
+`ts-node ./node_modules/typeorm/cli.js migration:run`
 
 ## Generate Migration commands
 `ts-node ./node_modules/typeorm/cli.js migration:generate -n [new-table] -d ./src/migration/`
@@ -60,11 +51,5 @@ $ npm run dev
 ## Create Migration typeorm commands
 `ts-node ./node_modules/typeorm/cli.js migration:create -n [new-table] -d ./src/migration/`
 
-## Run Migrations typeorm commands
-`ts-node ./node_modules/typeorm/cli.js migration:run`
-
 ## drop database
 `ts-node ./node_modules/typeorm/cli.js schema:drop`
-
-backend_test
-
