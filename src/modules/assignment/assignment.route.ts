@@ -1,12 +1,12 @@
 import { Router } from 'express';
-import userController from './assigment.controller';
+import assignmentController from './assignment.controller';
 
 const router: Router = Router();
 
-router.get('/', userController.get);
-router.get('/:id', userController.getById);
-router.post('/', userController.post);
-router.put('/:id', userController.put);
-router.delete('/:id', userController.remove);
+router.get('/', assignmentController.get);
+router.get('/:id', assignmentController.getById);
+router.post('/', assignmentController.post);
+router.put('/:id', assignmentController.put);
+router.delete('/:id', assignmentController.remove);
 
 export default { router };

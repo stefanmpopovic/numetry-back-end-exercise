@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
 
 @Entity()
 export class Game {
@@ -14,6 +14,6 @@ export class Game {
   @Column({ default: true })
   active!: boolean;
 
-  @Column({ name: 'created_at'})
+  @CreateDateColumn({ name: 'created_at', type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt!: Date;
 }
