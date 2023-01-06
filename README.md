@@ -25,6 +25,12 @@ Consider that one Assignments can have many games related.
 1. Create the relationship between the two tables.
 2. Insert, populate seed data to test the relationship.
 3. Create the SQL to return the relationship data.
+```
+SELECT *
+FROM assignment_games_game
+JOIN "assignment" ON "assignment".id = "assignment_games_game"."assignmentId"
+JOIN game ON game.id = "assignment_games_game"."gameId"
+```
 4. Create or change a find method to return the relationship data.
 
 5. Explain:

@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToMany, JoinTable } from 'typeorm';
+import { Game } from './Game';
 
 @Entity()
 export class Assignment {
@@ -19,4 +20,8 @@ export class Assignment {
 
   @CreateDateColumn({ name: 'created_at', type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt!: Date;
+
+  @ManyToMany(() => Game, (game) => game.assignments)
+  @JoinTable()
+  games!: Game[];
 }

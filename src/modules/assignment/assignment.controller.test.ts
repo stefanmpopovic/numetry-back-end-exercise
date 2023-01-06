@@ -21,6 +21,7 @@ describe('Parent POST', () => {
     .then(response => {
       const assignment: Assignment = response.body[0];
       expect(assignment.name).not.toBe(null);
+      expect(assignment).toHaveProperty('games');
     });
   });
 

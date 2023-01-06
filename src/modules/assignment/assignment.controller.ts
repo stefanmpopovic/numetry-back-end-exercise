@@ -3,7 +3,9 @@ import { Assignment } from '../../entity/Assignment';
 import { getConnection, getRepository } from 'typeorm';
 
 const get = async (_req: Request, res: Response) => {
-  const allAssignment = await getRepository(Assignment).find();
+  const allAssignment = await getRepository(Assignment).find({
+    relations: ['games']
+  });
   res.status(200).json(allAssignment);
 };
 
